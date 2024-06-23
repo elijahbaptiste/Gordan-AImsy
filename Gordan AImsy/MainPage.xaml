@@ -25,24 +25,25 @@
                     VerticalOptions="Start"/>
                 <VerticalStackLayout>
                     <HorizontalStackLayout
-                        Margin="1"
                         HeightRequest="400"
-                        WidthRequest="270">
+                        WidthRequest="270"
+                        Spacing="10">
                         <Entry 
                             Placeholder="Ask Me a Question" 
                             IsPassword="False" 
                             Keyboard="Text"
-                            VerticalOptions="Start"
-                            />
+                            VerticalOptions="Start"/>
                         <ImageButton
                             Source="searchbutton.png"
                             Clicked="OnButtonClicked"
                             IsEnabled="True"
-                            Scale="0.5"
-                            Aspect="Center"
+                            Aspect="AspectFill"
                             VerticalOptions="Start"
                             HorizontalOptions="Start"
-                            />
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            Padding="5000">
+                        </ImageButton>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </HorizontalStackLayout>
