@@ -23,6 +23,24 @@
                 <Label 
                     Text="Search History"
                     VerticalOptions="Start"/>
+                <ListView>
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="LightGray">
+                                <Label Margin="10,0,0,0"
+                       Text="Chat History"
+                       FontSize="12"
+                       FontAttributes="Bold" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding question}"
+                            Detail="{Binding message}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <VerticalStackLayout>
                     <HorizontalStackLayout
                         HeightRequest="400"
@@ -41,8 +59,7 @@
                             VerticalOptions="Start"
                             HorizontalOptions="Start"
                             WidthRequest="30"
-                            HeightRequest="30"
-                            Padding="5000">
+                            HeightRequest="30">
                         </ImageButton>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
