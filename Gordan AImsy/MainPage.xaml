@@ -21,7 +21,7 @@
             <HorizontalStackLayout
                 HeightRequest="400">
                 <Label 
-                    Text="Search History"
+                    Text="Chat History"
                     VerticalOptions="Start"/>
                 <ListView>
                     <ListView.HeaderTemplate>
@@ -42,26 +42,15 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <VerticalStackLayout>
-                    <HorizontalStackLayout
-                        HeightRequest="400"
-                        WidthRequest="270"
-                        Spacing="10">
-                        <Entry 
+                    <Entry 
                             Placeholder="Ask Me a Question" 
-                            IsPassword="False" 
+                            IsPassword="False"
                             Keyboard="Text"
-                            VerticalOptions="Start"/>
-                        <ImageButton
-                            Source="searchbutton.png"
-                            Clicked="OnButtonClicked"
-                            IsEnabled="True"
-                            Aspect="AspectFill"
+                            ReturnType="Search"
+                            ClearButtonVisibility="WhileEditing"
                             VerticalOptions="Start"
-                            HorizontalOptions="Start"
-                            WidthRequest="30"
-                            HeightRequest="30">
-                        </ImageButton>
-                    </HorizontalStackLayout>
+                            //Completed="SearchQuestion"/>
+                    
                 </VerticalStackLayout>
             </HorizontalStackLayout>
             
