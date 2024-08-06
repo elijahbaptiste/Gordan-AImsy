@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Gordan_AImsy.MainPage">
+             x:Class="Gordan_AImsy.MainPage"
+             xmlns:viewmodel="clr-namespace:Gordan_AImsy.ViewModel"
+             x:DataType="viewmodel:MainPageViewModel"
+             BackgroundColor="{StaticResource MarianBlue}">
 
     <ScrollView>
         <VerticalStackLayout
@@ -36,28 +39,24 @@
                     </ListView.HeaderTemplate>
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding question}"
-                            Detail="{Binding message}" />
+                            <TextCell Text="{Binding Question}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
                 <VerticalStackLayout>
                     <Entry 
-                            Placeholder="Ask Me a Question" 
+                            Placeholder="Ask Me a Question"
+                            Text="{Binding Text}"
                             IsPassword="False"
                             Keyboard="Text"
                             ReturnType="Search"
+                            ReturnCommand="{Binding QuestionAskedCommand}"
                             ClearButtonVisibility="WhileEditing"
                             VerticalOptions="Start"
-                            //Completed="SearchQuestion"/>
-                    
+                            />
+
                 </VerticalStackLayout>
             </HorizontalStackLayout>
-            
-           
-            
-            
-
         </VerticalStackLayout>
     </ScrollView>
 

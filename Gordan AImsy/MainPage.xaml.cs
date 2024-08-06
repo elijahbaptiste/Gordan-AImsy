@@ -1,24 +1,17 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Gordan_AImsy.ViewModel;
+using System.Runtime.CompilerServices;
 
 namespace Gordan_AImsy
 {
     public partial class MainPage : ContentPage
     {
-        List<(string, string)> Chats = new List<(string, string)>();
-        public string question { get; private set; }
-        public string message  { get; private set; }
-
-        public MainPage()
+        
+        public MainPage(MainPageViewModel vm)
         {
             InitializeComponent();
+            BindingContext = vm; 
         }
 
-        private void OnButtonClicked(object sender, EventArgs e)
-        { 
-          
-        
-        }
-        
     }
 }   
     
