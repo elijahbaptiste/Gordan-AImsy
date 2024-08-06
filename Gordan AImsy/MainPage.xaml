@@ -5,9 +5,8 @@
              xmlns:viewmodel="clr-namespace:Gordan_AImsy.ViewModel"
              x:DataType="viewmodel:MainPageViewModel"
              BackgroundColor="{StaticResource MarianBlue}">
-
-    <ScrollView>
-        <VerticalStackLayout
+    
+    <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
             <Image
@@ -18,46 +17,47 @@
 
             <Label
                 Text="I'm Gordan AImsy &#10;Your AI kitchen Assitant"
+                TextColor="{StaticResource Cinerous}"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-            <HorizontalStackLayout
-                HeightRequest="400">
-                <Label 
-                    Text="Chat History"
-                    VerticalOptions="Start"/>
-                <ListView>
-                    <ListView.HeaderTemplate>
-                        <DataTemplate>
-                            <StackLayout BackgroundColor="LightGray">
-                                <Label Margin="10,0,0,0"
-                       Text="Chat History"
-                       FontSize="12"
-                       FontAttributes="Bold" />
-                            </StackLayout>
-                        </DataTemplate>
-                    </ListView.HeaderTemplate>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding Question}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+        <HorizontalStackLayout
+                HeightRequest="475"
+                WidthRequest="374">
+            <ListView
+                    ItemsSource="{Binding Items}"
+                    MaximumWidthRequest="125"
+                    WidthRequest="125"
+                    BackgroundColor="Transparent"
+                    SeparatorColor="{StaticResource AshGray}">
+                <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Question}" 
+                              Detail=""
+                              TextColor="{StaticResource Cinerous}"
+                              
+                              />
+                </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
                 <VerticalStackLayout>
                     <Entry 
                             Placeholder="Ask Me a Question"
+                            WidthRequest="249"
+                            MaximumWidthRequest="249"
                             Text="{Binding Text}"
+                            TextColor="{StaticResource Cinerous}"
                             IsPassword="False"
                             Keyboard="Text"
                             ReturnType="Search"
                             ReturnCommand="{Binding QuestionAskedCommand}"
                             ClearButtonVisibility="WhileEditing"
                             VerticalOptions="Start"
-                            />
+                    />
 
                 </VerticalStackLayout>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-    </ScrollView>
+    
 
 </ContentPage>

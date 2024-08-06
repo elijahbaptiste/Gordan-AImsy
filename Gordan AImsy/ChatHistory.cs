@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gordan_AImsy
 {
-    class ChatHistory
+    public class ChatHistory
     {
+        public string Task {  get; set; }
+        public string message { get; set; }
     }
 }
