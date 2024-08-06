@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              x:Class="Gordan_AImsy.MainPage"
              xmlns:viewmodel="clr-namespace:Gordan_AImsy.ViewModel"
              x:DataType="viewmodel:MainPageViewModel"
              BackgroundColor="{StaticResource MarianBlue}">
+    <Page.Behaviors>
+        <mct:StatusBarBehavior
+            StatusBarColor="{StaticResource Cinerous}"
+        />
+    </Page.Behaviors>
     
-    <VerticalStackLayout
+    <Grid
+        Margin="15"
+        RowDefinitions=".4*,.1*,.1*,.4*">
+        <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
             <Image
@@ -21,25 +30,25 @@
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
-        <HorizontalStackLayout
+            <HorizontalStackLayout
                 HeightRequest="475"
                 WidthRequest="374">
-            <ListView
+                <ListView
                     ItemsSource="{Binding Items}"
                     MaximumWidthRequest="125"
                     WidthRequest="125"
                     BackgroundColor="Transparent"
                     SeparatorColor="{StaticResource AshGray}">
-                <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Question}" 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Question}" 
                               Detail=""
                               TextColor="{StaticResource Cinerous}"
                               
                               />
-                </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <VerticalStackLayout>
                     <Entry 
                             Placeholder="Ask Me a Question"
@@ -58,6 +67,5 @@
                 </VerticalStackLayout>
             </HorizontalStackLayout>
         </VerticalStackLayout>
-    
-
+    </Grid>
 </ContentPage>
