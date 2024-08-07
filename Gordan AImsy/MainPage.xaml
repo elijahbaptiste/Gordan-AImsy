@@ -26,24 +26,24 @@
 
             <Label
                 Text="I'm Gordan AImsy &#10;Your AI kitchen Assitant"
-                TextColor="{StaticResource Cinerous}"
+                TextColor="{StaticResource AntiqueWhite}"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
             <HorizontalStackLayout
-                HeightRequest="475"
+                HeightRequest="459"
                 WidthRequest="374">
                 <ListView
                     ItemsSource="{Binding Items}"
                     MaximumWidthRequest="125"
                     WidthRequest="125"
-                    BackgroundColor="Transparent"
-                    SeparatorColor="{StaticResource AshGray}">
+                    BackgroundColor="{StaticResource SlateGray}"
+                    SeparatorColor="{StaticResource Black}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding Question}" 
                               Detail=""
-                              TextColor="{StaticResource Cinerous}"
+                              TextColor="{StaticResource AntiqueWhite}"
                               
                               />
                         </DataTemplate>
@@ -52,16 +52,32 @@
                 <VerticalStackLayout>
                     <Entry 
                             Placeholder="Ask Me a Question"
-                            WidthRequest="249"
+                            PlaceholderColor="{StaticResource AntiqueWhite}"
+                            WidthRequest="250"
                             MaximumWidthRequest="249"
+                            BackgroundColor="{StaticResource AirSupeBlue }"
                             Text="{Binding Text}"
-                            TextColor="{StaticResource Cinerous}"
+                            TextColor="{StaticResource AntiqueWhite}"
                             IsPassword="False"
                             Keyboard="Text"
                             ReturnType="Search"
                             ReturnCommand="{Binding QuestionAskedCommand}"
                             ClearButtonVisibility="WhileEditing"
                             VerticalOptions="Start"
+                    />
+
+                    <Editor
+                        x:Name="PromptAnswer"
+                        Placeholder="Your response will go here"
+                        PlaceholderColor="{StaticResource AntiqueWhite}"
+                        BackgroundColor="{StaticResource AirSupeBlue }"
+                        HeightRequest="415"
+                        WidthRequest="250"
+                        IsReadOnly="True"
+                        Text=""
+                        TextColor="{StaticResource Cinerous}"
+                        
+                        
                     />
 
                 </VerticalStackLayout>

@@ -33,7 +33,11 @@
     <Color x:Key="AshGray">#ABC8C0</Color>
     <Color x:Key="AtomicTangerine">#E49273</Color>
     <Color x:Key="Cinerous">#A37A74</Color>
-    
+    <Color x:Key="AirSupeBlue">#7C9EB2</Color>
+    <Color x:Key="AntiqueWhite">#FFEEDB</Color>
+    <Color x:Key="Chamoisee">#8C705F</Color>
+    <Color x:Key="SlateGray">#607A89</Color>
+
 
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>

@@ -34,7 +34,7 @@ public partial class MainPageViewModel : ObservableObject
     }
 
     [RelayCommand]
-    void QuestionAsked()
+    async void QuestionAsked()
     {
         Text = string.Empty;
 
@@ -42,6 +42,7 @@ public partial class MainPageViewModel : ObservableObject
             return;
         }
 
+        await GetChatClient();
         ChatHistory LastAsk = new ChatHistory { Task = question, message = "" };
         items.Add(LastAsk);
     }
